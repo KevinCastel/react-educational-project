@@ -1,23 +1,101 @@
+:root{
+  --red-hero-journey:#8B0000;
+  --yellow-hero-journey:#FFD700;
+  --green-hero-journey:#32CD32;
+  --blue-hero-journey:#1E90FF;
+  --gray-hero-journey:#D3D3D3;
+}
+/*thema from piktochart, see Hero's Journey*/
+
 body, #root, .App, .App-header {
   margin: 0;
   height: 100vh;
-  width: 100vw; 
+  width: 100vw;
+  position: absolute; 
 }
 
 .div_menu {
-  /* display: contents; */
+  display: flex;
+  flex-direction: column;
   margin: 0;
   top: 0;
-  position: relative;
-  width: 20%;
+  position: fixed;
+  width: 40%;
   height: 100%;
-  background-color: red;
+  background-color: var(--red-hero-journey);
+  z-index: 0;
 }
+
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 100%;
+  color: var(--gray-hero-journey);
+}
+
+
+.div_life{
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.div_life div{
+  display: flex;
+  flex-direction: column;
+}
+
+.div_life input{
+    background-color: var(--red-hero-journey);
+    border-color: var(--gray-hero-journey);
+    border-style: ridge;
+    border-radius: 6px;
+    color: var(--gray-hero-journey);
+    margin-top: 5px;
+}
+
+.div_life label {
+  text-align: left;
+  width: 50%;
+  font-family: Verdana, Impact, sans-serif;
+  font-size: 1.2rem;
+  color: #D3D3D3;
+}
+
 
 @media only screen and (max-width:500px){
   .div_menu{
     width: 100%;
-    height: 60px;
-    background-color: black;
+    height: 140px;
+    background-color: var(--red-hero-journey);
+  }
+  h1{
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 5%;
+  }
+
+  .div_life {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .div_life div{
+    padding-left: 20px;
+  }
+
+  .div_life label{
+    font-size: 0.4;
+    text-align: left;
+  }
+  
+  .div_life input{
+    width: 30%;
+    min-height: 18px;
   }
 }
