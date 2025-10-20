@@ -21,8 +21,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         {divManageGame}
-        <p>Pouvez-vous jouer ? {(is_playing.toString())}</p>
       </header>
+      <div className='body-customized'>
+
+      </div>
+      <div className='App-footer'>
+        <p>Je suis footer</p>
+      </div>
     </div>
   );
 }

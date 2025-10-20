@@ -7,18 +7,21 @@
 }
 /*thema from piktochart, see Hero's Journey*/
 
-body, #root, .App, .App-header {
+#root {
   margin: 0;
+  padding: 0;
   height: 100vh;
   width: 100vw;
-  position: absolute; 
+  /* position: absolute;  */
 }
 
+body, .App-header{
+  overflow: hidden;
+}
+
+
+
 p{
-  display: flex;
-  position: absolute;
-  padding-top: 20%;
-  padding-left: 2%;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: var(--gray-hero-journey);
 }
@@ -28,7 +31,7 @@ p{
   flex-direction: column;
   margin: 0;
   top: 0;
-  position: fixed;
+  /* position: fixed; */
   width: 40%;
   height: 100%;
   background-color: var(--red-hero-journey);
@@ -74,6 +77,23 @@ h1{
   color: #D3D3D3;
 }
 
+.body-customized{
+  height: auto;
+  width: auto;
+  background-color: blue;
+}
+
+.App-footer{
+  position: fixed;
+  bottom: 0;
+  min-height: 50px;
+  height: 20%;
+  width: 100%;
+  background-color:green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media only screen and (max-width:500px){
   .div_menu{
