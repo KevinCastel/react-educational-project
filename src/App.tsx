@@ -1,31 +1,42 @@
 import { error } from 'console';
 import './App.css';
 import "./index.css"
+import { callbackify } from 'util';
+import { useState } from 'react';
+import { Input } from 'postcss';
 
 
-let is_playing = false;
-let lives = 0;
-let num_to_find = 0;
-
+const DEFAULT_LIVES = 3;
 
 function App() {
+  const [is_playing, setIsPlaying] = useState(false);
+  const start_game = (childData:boolean) => {
+    setIsPlaying(childData === true);
+    console.log("refresh isplauing :", childData);
+  };
+
+  const divManageGame = DivManageGame(start_game);
+
   return (
     <div className="App">
       <header className="App-header">
-        <DivManageGame />
-        <ButtonGame text='Bonjour'/>
+        {divManageGame}
+        <p>Pouvez-vous jouer ? {(is_playing.toString())}</p>
       </header>
     </div>
   );
 }
 
+
 /* Return a component witch is a div with fields stuffs 
 to configure game*/
-function DivManageGame(){
+function DivManageGame(parentCallback:(v:boolean)=>void){
+  const buttonPlay = ButtonPlay(parentCallback);
   return (
     <div className="div_menu">
       <h1>Configuration pour le jeu</h1>
       <FieldGame element_name='life' />
+      {buttonPlay}
     </div>
   )
 }
@@ -38,25 +49,29 @@ function FieldGame({element_name="", is_num=true}){
     type_field = "numeric";
   }
   const div_name = `div_${element_name}`;
+  
+  const [lives, setLives] = useState(DEFAULT_LIVES);
 
   return (
     <div className={div_name}>
       <div>
-        <label>Lifes :</label>
-        <input type={type_field}/>
+        <label>Vies :</label>
+        <input type={type_field} defaultValue={DEFAULT_LIVES} onChange={e => setLives(Number(e.target.value))}/>
       </div>
     </div>
   )
 }
 
-/* Return a button as component, you have to specify the text's component */
-function ButtonGame({ text = ""}){
-  if (text.length == 0){
-    throw Error("No text provided for the button element")
+function ButtonPlay(parentCallback:(v:boolean) => void){
+  const handleButtonPlay = () => {
+    // console.log("start game ?");
+    parentCallback(true); //refresh playing
   }
-  return (
-    <button className='bg-white p-5'>{text}</button>
-  )
+  return <button onClick={handleButtonPlay}>Jouer</button>
+}
+
+function startGame(){
+  console.log("startGame is clicked");
 }
 
 export default App;
