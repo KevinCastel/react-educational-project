@@ -15,24 +15,67 @@
   /* position: absolute;  */
 }
 
-body, .App-header{
+body{
   overflow: hidden;
 }
 
+.App-not-playing, .App-not-playing {
+  height: 100%;
+  display: flex;
+}
 
+.App-not-playing{
+  flex-direction: row;
+}
+
+.App-playing{
+  flex-direction: column;
+  height: 80%;
+}
+
+
+.App-header-not-playing {
+  width: 46%;
+  min-width: 290px;
+  max-width: 330px;
+}
+
+.App-header-playing {
+  width: 100%;
+  height: 140px;
+  background-color: var(--red-hero-journey);
+}
 
 p{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: var(--gray-hero-journey);
 }
 
-.div_menu {
+.div-menu input{
+    background-color: var(--red-hero-journey);
+    border-color: var(--gray-hero-journey);
+    border-style: ridge;
+    border-radius: 6px;
+    color: var(--gray-hero-journey);
+    margin-top: 5px;
+    transition: all 1s ease-out;
+}
+
+
+.div-menu input:focus{
+  color:var(--blue-hero-journey);
+  border: 0.6mm ridge var(--blue-hero-journey);
+  outline: none;
+  transition: all 1s ease-out;
+}
+
+.div-menu {
   display: flex;
   flex-direction: column;
   margin: 0;
   top: 0;
   /* position: fixed; */
-  width: 40%;
+  width: 100%;
   height: 100%;
   background-color: var(--red-hero-journey);
   z-index: 0;
@@ -47,6 +90,51 @@ h1{
 }
 
 
+.button-play-center {
+  width: 100%;
+  height: 20%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn-play{
+  width: 30%;
+  height: 18%;
+  min-height: 26px;
+  min-width: 70px;
+  background-color: var(--red-hero-journey);
+  border: 0.6mm solid var(--gray-hero-journey);
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--gray-hero-journey);
+  transition: all 1s ease-out;
+}
+
+.btn-play:hover{
+  color: var(--blue-hero-journey);
+  border-color: var(--blue-hero-journey);
+  cursor: grab;
+  transition: all 1s ease-out;
+}
+
+.div-game-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20%;
+}
+
+.div-game-section label{
+  text-align: left;
+  color: var(--red-hero-journey);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .div_life{
   height: 200px;
   width: 100%;
@@ -60,14 +148,6 @@ h1{
   flex-direction: column;
 }
 
-.div_life input{
-    background-color: var(--red-hero-journey);
-    border-color: var(--gray-hero-journey);
-    border-style: ridge;
-    border-radius: 6px;
-    color: var(--gray-hero-journey);
-    margin-top: 5px;
-}
 
 .div_life label {
   text-align: left;
@@ -77,11 +157,70 @@ h1{
   color: #D3D3D3;
 }
 
-.body-customized{
-  height: auto;
-  width: auto;
-  background-color: blue;
+
+/*All styles under are for play section*/
+
+.body-customized-playing {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.body-customized-not-playing{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+Used to center the input section of the player
+*/
+.justify-left {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 0.8mm solid var(--red-hero-journey);
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.justify-left *{
+  margin-bottom: 10px;
+}
+
+.justify-left button{
+  margin-top: 7px;
+  background-color: white;
+  color: var(--blue-hero-journey);
+  border: 0.6mm solid var(--blue-hero-journey);
+  border-radius: 6px;
+  cursor: grab;
+  transition: all 1s ease-out;
+}
+
+.justify-left button:hover{
+  color: var(--red-hero-journey);
+  border-color: var(--red-hero-journey);
+  transition: all 1s ease-out;
+}
+
+.justify-left input{
+  color: var(--blue-hero-journey);
+  border: 0.6mm ridge var(--blue-hero-journey);
+  transition : all 1s ease-out;
+}
+
+.justify-left input:focus{
+  color: var(--red-hero-journey);
+  outline: none;
+  border: 0.6mm ridge var(--red-hero-journey);
+  transition : all 1s ease-out;
+}
+
 
 .App-footer{
   position: fixed;
@@ -89,17 +228,32 @@ h1{
   min-height: 50px;
   height: 20%;
   width: 100%;
-  background-color:green;
+  background-color:var(--red-hero-journey);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media only screen and (max-width:500px){
-  .div_menu{
+  .App-not-playing {
+    flex-direction: column;
+  }
+
+  .body-customized-not-playing{
+    width: 100%;
+  }
+
+  .App-header-not-playing {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+  }
+
+  .div-menu{
     width: 100%;
     height: 140px;
     background-color: var(--red-hero-journey);
+    padding-bottom: 10px;
   }
   
   h1{
