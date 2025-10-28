@@ -202,7 +202,7 @@ h1{
 }
 
 
-.lifes{
+.lives{
   max-width: 100px;
   min-height: 50px;
   padding: 2%;
@@ -212,18 +212,18 @@ h1{
 
 
 
-.lifes-svg {
-	/* height: 100%; */
+/* .lifes-svg {
+	/* height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-content: center;
-  /* padding-top: 3%; */
-}
+  /* padding-top: 3%; 
+*/
 
-.lifes-svg *{
+/* .lifes-svg *{
   margin-right: 3%;
-}
+} */
 
 /*All styles under are for play section*/
 
@@ -233,6 +233,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .body-customized-not-playing{
@@ -241,6 +242,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 h2{
@@ -294,6 +296,11 @@ Used to center the input section of the player
   transition : all 1s ease-out;
 }
 
+
+.infos-party h2{
+  text-align: center;
+  margin-top: 10%;
+}
 
 .App-footer{
   position: fixed;
