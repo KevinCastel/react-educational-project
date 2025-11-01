@@ -14,6 +14,10 @@ import { setDefaultCACertificates } from 'tls';
 // import {ReactComponent as HeartSvg} from './heart-svgrepo-com.svg';
 
 
+//TODO Remplacer les states par soit redux soit useRender
+//TODO Ajouter la version dans le footer
+//TODO Ajouter une visualisation des règles de jeu en haut de l'écran
+
 const MAX_SECONDS = 300;
 const DEFAULT_LIVES : number = 30;
 
