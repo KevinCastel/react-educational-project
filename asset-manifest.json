@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/duminombre/static/css/main.f10b1a75.css",
+    "main.js": "/duminombre/static/js/main.bec32d1e.js",
+    "static/js/455.f13656ef.chunk.js": "/duminombre/static/js/455.f13656ef.chunk.js",
+    "index.html": "/duminombre/index.html",
+    "main.f10b1a75.css.map": "/duminombre/static/css/main.f10b1a75.css.map",
+    "main.bec32d1e.js.map": "/duminombre/static/js/main.bec32d1e.js.map",
+    "455.f13656ef.chunk.js.map": "/duminombre/static/js/455.f13656ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f10b1a75.css",
+    "static/js/main.bec32d1e.js"
+  ]
+}
